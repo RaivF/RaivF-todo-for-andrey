@@ -13,7 +13,6 @@ const store = configureStore({
 	preloadedState: persistedTodos ? { todos: persistedTodos } : undefined,
 })
 
-// Сохраняем только список задач
 store.subscribe(() => {
 	saveTodos(store.getState().todos)
 })

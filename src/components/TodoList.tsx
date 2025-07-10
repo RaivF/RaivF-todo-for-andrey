@@ -1,4 +1,3 @@
-// src/components/TodoList.tsx
 import React, { useState, useMemo } from 'react'
 import {
 	List,

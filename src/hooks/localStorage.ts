@@ -1,6 +1,5 @@
 const TODOS_KEY = 'todos'
 
-// Функция загрузки — возвращает массив задач или undefined
 export function loadTodos(): string[] | undefined {
 	try {
 		const serialized = localStorage.getItem(TODOS_KEY)
@@ -12,7 +11,6 @@ export function loadTodos(): string[] | undefined {
 	}
 }
 
-// Функция сохранения — принимает массив задач
 export function saveTodos(todos: unknown): void {
 	try {
 		const serialized = JSON.stringify(todos)

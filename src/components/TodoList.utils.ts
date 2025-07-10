@@ -1,5 +1,3 @@
-// src/utils/todoListUtils.ts
-
 import type { FilterStatus } from '../features/filter/filterSlice'
 import { addTodo } from '../features/todos/todoSlice'
 import { setFilter } from '../features/filter/filterSlice'
