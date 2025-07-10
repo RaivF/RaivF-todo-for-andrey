@@ -1,11 +1,7 @@
-// src/App2.test.tsx
-
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import TodoList from './components/TodoList'
 import { useAppDispatch, useAppSelector } from './hooks/hooks'
-
-// Импорт утилит
 import * as utils from './components/TodoList.utils'
 
 jest.mock('./hooks/hooks')
@@ -45,8 +41,8 @@ describe('TodoList', () => {
 
 	it('renders header, input and add button', () => {
 		;(useAppSelector as jest.Mock)
-			.mockReturnValueOnce('all') // для filter
-			.mockReturnValueOnce([]) // для todos
+			.mockReturnValueOnce('all')
+			.mockReturnValueOnce([])
 		render(<TodoList />)
 
 		expect(screen.getByRole('heading', { level: 6 })).toHaveTextContent(
@@ -77,7 +73,7 @@ describe('TodoList', () => {
 
 	it('dispatches filter change when toggling buttons', () => {
 		;(useAppSelector as jest.Mock)
-			.mockReturnValueOnce('active') // изначальный filter
+			.mockReturnValueOnce('active')
 			.mockReturnValueOnce([])
 		render(<TodoList />)
 

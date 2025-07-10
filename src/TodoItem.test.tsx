@@ -31,7 +31,7 @@ describe('TodoItem', () => {
 
 	it('renders text without style check', () => {
 		render(<TodoItem id={mockId} text={mockText} completed={false} />)
-		// проверяем, что текст вообще отрендерился
+
 		expect(screen.getByText(mockText)).toBeTruthy()
 	})
 

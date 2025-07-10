@@ -22,7 +22,7 @@ import {
 const TodoList: React.FC = () => {
 	const dispatch = useAppDispatch()
 	const filter = useAppSelector(state => state.filter.status)
-	// Получаем отфильтрованные задачи, по умолчанию пустой массив
+
 	const rawTodos = useAppSelector(
 		useMemo(() => state => selectFilteredTodos(state, filter), [filter])
 	)
