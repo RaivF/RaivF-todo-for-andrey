@@ -31,9 +31,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, completed }) => {
 			}
 		>
 			<Checkbox edge='start' checked={completed} onChange={handleToggle} />
+
 			<ListItemText
 				primary={text}
-				sx={{ textDecoration: completed ? 'line-through' : 'none' }}
+				style={{ textDecoration: completed ? 'line-through' : 'none' }}
 			/>
 		</ListItem>
 	)

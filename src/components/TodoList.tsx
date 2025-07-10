@@ -22,9 +22,11 @@ import {
 const TodoList: React.FC = () => {
 	const dispatch = useAppDispatch()
 	const filter = useAppSelector(state => state.filter.status)
-	const todos = useAppSelector(
+	// Получаем отфильтрованные задачи, по умолчанию пустой массив
+	const rawTodos = useAppSelector(
 		useMemo(() => state => selectFilteredTodos(state, filter), [filter])
 	)
+	const todos = rawTodos ?? []
 
 	const [text, setText] = useState('')
 
@@ -83,14 +85,19 @@ const TodoList: React.FC = () => {
 			</Box>
 
 			<List>
-				{todos.map(todo => (
-					<TodoItem
-						key={todo.id}
-						id={todo.id}
-						text={todo.text}
-						completed={todo.completed}
-					/>
-				))}
+				{todos.length === 0 ? (
+					<Typography align='center'>нет задач</Typography>
+				) : (
+					todos.map(todo => (
+						<TodoItem
+							key={todo.id}
+							id={todo.id}
+							text={todo.text}
+							completed={todo.completed}
+							data-testid='todo-item'
+						/>
+					))
+				)}
 			</List>
 		</Paper>
 	)

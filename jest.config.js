@@ -1,12 +1,12 @@
 const config = {
 	collectCoverage: true,
-	collectCoverageFrom: ['src/**/*.{js,jsx}'],
+	collectCoverageFrom: ['src/**/*.{js,tsx}'],
 	coverageDirectory: 'coverage',
-	TestEnvironment: 'jsdom',
-	setupFilesAfterEnv: ['<rootDir>/internal/setup-tests.js'],
+	testEnvironment: 'jsdom',
+	setupFilesAfterEnv: ['<rootDir>/setup-tests.js'],
 	transform: {
-		'^.+\\.(js|jsx)$': 'babel-jest',
+		'^.+\\.[jt]sx?$': 'babel-jest',
 	},
-	moduleFileExtensions: ['js', 'jsx'],
+	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 }
 export default config
